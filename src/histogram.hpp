@@ -42,11 +42,11 @@ std::ostream& operator<<(std::ostream& os, const UIntHistogram& obj)
 {
   if (obj.name_.size())
     os << obj.name_ << std::endl;
-  
+
   size_t total = 0;
   os << "Counts" << std::endl;
   for (size_t i = 0; i < obj.count_.size(); i++) {
-    os << std::setw(2) << i << ":" 
+    os << std::setw(2) << i << ":"
        << obj.count_[i] << " ";
     total += obj.count_[i];
     if ((i+1) % 10 == 0)
@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& os, const UIntHistogram& obj)
 
   os << "Total: " << total << std::endl;
   for (size_t i = 0; i < obj.count_.size(); i++) {
-    os << std::setw(2) << i << ":" 
+    os << std::setw(2) << i << ":"
        << std::setprecision(3)
        << std::scientific
        << (double)obj.count_[i] / (double)total << " ";
