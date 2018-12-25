@@ -8,9 +8,9 @@
 #include <cstdlib>
 
 
-class MathExt
+namespace MathExt
 {
-public:
+
 
 /** Is power of 2
  * Recall the bit representation of an unsigned integer, x. When x is a power 
@@ -23,7 +23,7 @@ public:
  * 
  * \return True if input is a power of 2.
  */
-static bool
+bool
 isPowerOf2(size_t x)
 {
   return (x > 0 && !(x & (x - 1)));
@@ -32,17 +32,14 @@ isPowerOf2(size_t x)
 /**
  * Mask rand() to N bits
  */
-static int
+int
 rand_width(size_t n_bits)
 {
     unsigned int mask = (1UL << n_bits) - 1;
     return rand() & mask;
 }
 
-protected:
-private:
 
-}; // class MathExt
-
+} // namespace MathExt
 
 #endif // MATHEXT_HPP_
